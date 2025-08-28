@@ -1,0 +1,138 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeWorld</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#">AnimeWorld</a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="{% url 'anime:crear' %}">Crear</a></li>
+                    <li><a href="#">En Emisión</a></li>
+                    <li><a href="#">Más Populares</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar anime...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Tu Aventura Comienza Aquí</h1>
+                <p>Explora un universo de historias increíbles y personajes inolvidables.</p>
+                <a href="#" class="btn">Ver Catálogo</a>
+            </div>
+        </section>
+
+        <section class="anime-section container">
+            <h2>Animes en Tendencia 🔥</h2>
+            <div class="anime-grid">
+                <div class="anime-card">
+                    <img src="https://via.placeholder.com/220x330.png?text=Anime+1" alt="Anime 1">
+                    <div class="card-info">
+                        <h3>Nombre del Anime</h3>
+                        <span>Episodio 12</span>
+                    </div>
+                </div>
+                <div class="anime-card">
+                    <img src="https://via.placeholder.com/220x330.png?text=Anime+2" alt="Anime 2">
+                    <div class="card-info">
+                        <h3>Nombre del Anime</h3>
+                        <span>Episodio 5</span>
+                    </div>
+                </div>
+                <div class="anime-card">
+                    <img src="https://via.placeholder.com/220x330.png?text=Anime+3" alt="Anime 3">
+                    <div class="card-info">
+                        <h3>Nombre del Anime</h3>
+                        <span>Película</span>
+                    </div>
+                </div>
+                <div class="anime-card">
+                    <img src="https://via.placeholder.com/220x330.png?text=Anime+4" alt="Anime 4">
+                    <div class="card-info">
+                        <h3>Nombre del Anime</h3>
+                        <span>Episodio 24</span>
+                    </div>
+                </div>
+                 <div class="anime-card">
+                    <img src="https://via.placeholder.com/220x330.png?text=Anime+5" alt="Anime 5">
+                    <div class="card-info">
+                        <h3>Nombre del Anime</h3>
+                        <span>Episodio 8</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="anime-section container">
+            <h2>Últimos Episodios Añadidos 🚀</h2>
+             <div class="anime-grid">
+                <div class="anime-card">
+                    <img src="https://via.placeholder.com/220x330.png?text=Anime+A" alt="Anime A">
+                    <div class="card-info">
+                        <h3>Nombre del Anime A</h3>
+                        <span>Episodio Final</span>
+                    </div>
+                </div>
+                <div class="anime-card">
+                    <img src="https://via.placeholder.com/220x330.png?text=Anime+B" alt="Anime B">
+                    <div class="card-info">
+                        <h3>Nombre del Anime B</h3>
+                        <span>Episodio 1</span>
+                    </div>
+                </div>
+                <div class="anime-card">
+                    <img src="https://via.placeholder.com/220x330.png?text=Anime+C" alt="Anime C">
+                    <div class="card-info">
+                        <h3>Nombre del Anime C</h3>
+                        <span>OVA</span>
+                    </div>
+                </div>
+                <div class="anime-card">
+                    <img src="https://via.placeholder.com/220x330.png?text=Anime+D" alt="Anime D">
+                    <div class="card-info">
+                        <h3>Nombre del Anime D</h3>
+                        <span>Episodio 10</span>
+                    </div>
+                </div>
+                 <div class="anime-card">
+                    <img src="https://via.placeholder.com/220x330.png?text=Anime+E" alt="Anime E">
+                    <div class="card-info">
+                        <h3>Nombre del Anime E</h3>
+                        <span>Episodio 3</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 AnimeWorld. Todos los derechos reservados.</p>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

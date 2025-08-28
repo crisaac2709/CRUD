@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Registro de anime</h1>
+
+    {% if messages %}   
+    <ul>
+        {% for message in messages%}
+            <li class="{{message.tags}}">{{message}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="nombre">Nombre</label>
+        {{form.nombre}}
+
+        <label for="descripcion">Descripcion</label>
+        {{form.descripcion}}
+
+        <label for="autor">Autor</label>
+        {{form.autor}}
+
+        <label for="anio_lanzamiento">Año de lanzamiento</label>
+        {{form.anio_lanzamiento}}
+
+        <label for="precio">Precio</label>
+        {{form.precio}}
+
+        <label for="imagen">Imagen</label>
+        {{form.imagen}}
+        
+        <button type="submit">Enviar</button>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #ff4081; /* Un rosa vibrante */
+    --secondary-color: #3f51b5; /* Un azul índigo */
+    --dark-color: #1a1a2e; /* Fondo principal oscuro */
+    --dark-secondary: #16213e; /* Un azul más oscuro */
+    --light-color: #e0e0e0; /* Texto claro */
+    --white-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header --- */
+.header {
+    background-color: var(--dark-secondary);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav ul li {
+    margin-left: 20px;
+}
+
+.nav ul li a {
+    color: var(--light-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-bar input {
+    border: 1px solid var(--primary-color);
+    background-color: transparent;
+    padding: 0.5rem;
+    border-radius: 5px 0 0 5px;
+    color: var(--white-color);
+    outline: none;
+}
+
+.search-bar button {
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--white-color);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 60vh;
+    background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url('https://via.placeholder.com/1920x1080.png?text=Anime+Banner') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white-color);
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* --- Anime Section --- */
+.anime-section {
+    padding: 4rem 0;
+}
+
+.anime-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.anime-card {
+    background-color: var(--dark-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.anime-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(255, 64, 129, 0.2);
+}
+
+.anime-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-info {
+    padding: 1rem;
+}
+
+.card-info h3 {
+    font-size: 1rem;
+    color: var(--white-color);
+    margin-bottom: 0.5rem;
+}
+
+.card-info span {
+    font-size: 0.9rem;
+    color: var(--light-color);
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--dark-secondary);
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.social-media a {
+    color: var(--light-color);
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+    }
+
+    .nav {
+        margin: 1rem 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .anime-section h2 {
+        font-size: 2rem;
+    }
+}
