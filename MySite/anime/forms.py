@@ -6,18 +6,14 @@ class RegistarAnimeForm(forms.ModelForm):
     class Meta:
         model = Anime
         fields = ['nombre', 'autor', 'descripcion', 'anio_lanzamiento', 'precio', 'imagen']
-        """
         widgets = {
             'nombre': forms.TextInput(attrs={
-                'class': 'form-control',
                 'placeholder': "Ingresa el nombre del anime"
             }),
-            'autor': forms.Select(attrs={
-                'class': 'form-control',
-            }),
+            'descripcion': forms.Textarea(attrs={
+                'rows': 5
+            })
         }
-        
-        """
         
     def clean_nombre(self):
         nombre = self.cleaned_data['nombre'].strip() 

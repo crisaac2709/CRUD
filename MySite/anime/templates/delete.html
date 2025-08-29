@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends  'base.html' %}
+{%load static%}
+{% block title %} <title>Eliminar</title> {% endblock %}
+
+{% block extra_css %} <link rel="stylesheet" href="{% static 'css/eliminar.css' %}"> {% endblock %}
+
+{%block content %}
+<div class="contenedor">
     <form method="POST">
         {% csrf_token %}
         <p>Deseas eliminar <span>{{anime.nombre}}</span>?</p>
-        <button type="submit">Si</button>
+        <button type="submit" class="btn-submit">Si</button>
         <a href="{% url 'anime:listar' %}">Cancelar</a>
     </form>
-</body>
-</html>
+</div>
+{% endblock %}

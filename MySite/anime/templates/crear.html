@@ -1,44 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <h1>Registro de anime</h1>
+{% load static %}
 
-    {% if messages %}   
-    <ul>
-        {% for message in messages%}
-            <li class="{{message.tags}}">{{message}}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
 
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <label for="nombre">Nombre</label>
-        {{form.nombre}}
+{% block title %} <title>Crear/Actualizar</title> {% endblock %}
+{% block extra_css%} <link rel="stylesheet" href="{% static 'css/form.css' %}">{% endblock %}
 
-        <label for="descripcion">Descripcion</label>
-        {{form.descripcion}}
-
-        <label for="autor">Autor</label>
-        {{form.autor}}
-
-        <label for="anio_lanzamiento">Año de lanzamiento</label>
-        {{form.anio_lanzamiento}}
-
-        <label for="precio">Precio</label>
-        {{form.precio}}
-
-        <label for="imagen">Imagen</label>
-        {{form.imagen}}
-        
-        <button type="submit">Enviar</button>
-    </form>
+{%block content%}
     
-</body>
-</html>
+    <main>
+        <div class="container-form">
+            <form method="POST" enctype="multipart/form-data">
+                <h1>Registro de anime</h1>
+                <p>Ingresa el anime</p>
+                {% csrf_token %}
+                <div class="class_form">
+                    <label for="nombre">Nombre</label>
+                    {{form.nombre}}
+                </div>
+
+                <div class="class_form">
+                    <label for="descripcion">Descripcion</label>
+                    {{form.descripcion}}
+                </div>
+
+                <div class="class_form">
+                    <label for="autor">Autor</label>
+                    {{form.autor}}
+                </div>
+                
+                <div class="class_form">
+                    <label for="anio_lanzamiento">Año de lanzamiento</label>
+                    {{form.anio_lanzamiento}}
+                </div>
+
+                <div class="class_form">
+                    <label for="precio">Precio</label>
+                    {{form.precio}}
+                </div>
+
+                <div class="class_form">
+                    <label for="imagen">Imagen</label>
+                    {{form.imagen}}
+                </div>
+                
+                <button type="submit" class="btn-submit">Enviar</button>
+            </form>
+        </div>
+
+    </main>
+
+{% endblock %}

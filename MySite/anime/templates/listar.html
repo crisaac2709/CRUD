@@ -1,50 +1,44 @@
+{% extends 'base.html' %}
 
+
+{% block title %} <title>Listar</title> {% endblock %}
 {% load static %}
+{% block extra_css %} <link rel="stylesheet" href="{% static 'css/listar.css' %}"> {% endblock %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/listar.css' %}">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <h1>Animes</h1>
-        <nav>
-            <a href="{% url 'anime:crear' %}">Agregar</a>
-        </nav>
-    </header>
+{% block content %}
+    <div class="contenedor">
+        <h1>Lista de animes</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Anime</th>
+                    <th>Descripcion</th>
+                    <th>Precio</th>
+                    <th>Año Lanzamiento</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for anime in animes %}
+                <tr>
+                    {% if anime.imagen %}
+                    <td><img class="foto" src="{{anime.imagen.url}}" alt="{{anime.nombre}}"></td>
+                    {% endif %}
+                    <td>{{anime.nombre}}</td>
+                    <td>{{anime.descripcion}}</td>
+                    <td>{{anime.precio}}</td>
+                    <td>{{anime.anio_lanzamiento}}</td>
+                    <td>
+                        <div class="acciones">
+                            <a href="{% url 'anime:update' anime.pk %}" class="update">Update</a>
+                            <a href="{% url 'anime:delete' anime.pk %}" class="delete">Eliminar</a>
+                        </div>
+                    </td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Foto</th>
-                <th>Anime</th>
-                <th>Descripcion</th>
-                <th>Precio</th>
-                <th>Año Lanzamiento</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for anime in animes %}
-            <tr>
-                {% if anime.imagen %}
-                <td><img class="foto" src="{{anime.imagen.url}}" alt="{{anime.nombre}}"></td>
-                {% endif %}
-                <td>{{anime.nombre}}</td>
-                <td>{{anime.descripcion}}</td>
-                <td>{{anime.precio}}</td>
-                <td>{{anime.anio_lanzamiento}}</td>
-                <td class="acciones">
-                    <a href="{% url 'anime:update' anime.pk %}">Update</a>
-                    <a href="{% url 'anime:delete' anime.pk %}">Eliminar</a>
-                </td>
-            </tr>
-            {%endfor%}
-        </tbody>
-    </table>
-</body>
-</html>
+{% endblock %}

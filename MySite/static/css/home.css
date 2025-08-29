@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    height: 60px;
+    max-height: 100px;
+    padding: 1rem;
+    background-color: #333;
+}
+
+header h2 {
+    color: #ccc;
+}
+
+nav a {
+    padding: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border: 1px solid #fff;
+    border-radius: 0.5rem;
+    margin-left: 1.5rem;
+}
